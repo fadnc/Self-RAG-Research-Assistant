@@ -8,4 +8,10 @@ from config import Settings
 from db.vector_store import VectorStore
 
 
-# File types this pipeline supports
+# File types this pipeline 
+SUPPORTED_EXTENSIONS={'.pdf', 'docx', '.txt', '.md'}
+
+def load_file(file_path: str) -> str:
+    "load a single file and return a list of langchain docs"
+    
+    path  = Path(file_path)
